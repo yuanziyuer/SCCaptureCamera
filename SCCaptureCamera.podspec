@@ -9,6 +9,7 @@ Pod::Spec.new do |s|
   s.frameworks   = 'Foundation', 'CoreGraphics', 'UIKit'
   s.platform     = :ios, '5.0'
   s.resources = 'SCCaptureCameraDemo/SCCaptureCamera/images/SCCamera/*'
-  s.source_files = 'SCCaptureCameraDemo/SCCaptureCamera/*.{h,m}', 'SCCaptureCameraDemo/Vendor/**/*','SCCaptureCameraDemo/SCCommon/*','SCCaptureCameraDemo/ALAssetsLibrary-CustomPhotoAlbum/*'
+  s.source_files = 'SCCaptureCameraDemo/SCCaptureCamera/*.{h,m}','SCCaptureCameraDemo/SCCommon/*','SCCaptureCameraDemo/ALAssetsLibrary-CustomPhotoAlbum/*'
   s.requires_arc = true
+  s.dependency 'SVProgressHUD'
 end
