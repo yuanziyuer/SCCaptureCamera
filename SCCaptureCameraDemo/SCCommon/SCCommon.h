@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "ALAssetsLibrary+CustomPhotoAlbum.h"
 @interface SCCommon : NSObject
 
 
@@ -17,7 +17,4 @@
 
 + (void)saveImageToPhotoAlbum:(UIImage*)image;
 
-+ (void)saveImageToCustomAlbum:(UIImage *)image withAlbumName:(NSString *)albumName;
-
-+ (void)saveVideoToCustomAlbum:(NSURL *)videoUrl withAlbumName:(NSString *)albumName;
 @end

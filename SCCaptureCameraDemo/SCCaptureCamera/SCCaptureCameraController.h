@@ -13,7 +13,6 @@
 
 @property (nonatomic, assign) CGRect previewRect;
 @property (nonatomic, assign) BOOL isStatusBarHiddenBeforeShowCamera;
-@property (nonatomic, copy)NSString *albumName;
 
 
 @end

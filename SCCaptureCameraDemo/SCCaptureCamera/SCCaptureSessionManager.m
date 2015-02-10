@@ -86,7 +86,7 @@
     AVCaptureSession *tmpSession = [[AVCaptureSession alloc] init];
     self.session = tmpSession;
     //设置质量
-//  _session.sessionPreset = AVCaptureSessionPresetPhoto;
+    _session.sessionPreset = AVCaptureSessionPresetPhoto;
 }
 
 /**
@@ -175,17 +175,20 @@
 /**
  *  拍完照片后预览图片
  */
-//- (void)addPreviewImageView {
-//    CGFloat headHeight = _previewLayer.bounds.size.height - SC_APP_SIZE.width;
-//    CGRect imageFrame = _previewLayer.bounds;
-//    imageFrame.origin.y = headHeight;
-//    
-//    UIImageView *imgView = [[UIImageView alloc] initWithFrame:imageFrame];
-//    imgView.contentMode = UIViewContentModeScaleAspectFill;
-//    [_preview addSubview:imgView];
-//    
+- (void)addPreviewImageView {
+    CGFloat headHeight = _previewLayer.bounds.size.height - SC_APP_SIZE.width;
+    CGRect imageFrame = _previewLayer.bounds;
+    imageFrame.origin.y = headHeight;
+    
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:imageFrame];
+    imgView.contentMode = UIViewContentModeScaleAspectFill;
+    [_preview addSubview:imgView];
+    
 //    self.imageView = imgView;
-//}
+//    UIImageView * image = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 568)];
+//    image.image = imgView;
+    
+}
 
 #pragma mark - actions
 /**
@@ -386,7 +389,9 @@
 //        }
         
         if (sender) {
-            [sender setImage:[UIImage imageNamed:imgStr] forState:UIControlStateNormal];
+//            [sender setImage:[UIImage imageNamed:imgStr] forState:UIControlStateNormal];
+            [sender setBackgroundImage:[UIImage imageNamed:imgStr] forState:UIControlStateNormal];
+            
         }
         
     } else {

@@ -12,7 +12,7 @@
 @protocol SCNavigationControllerDelegate;
 
 @interface SCNavigationController : UINavigationController
-@property(nonatomic, copy)NSString *customAlbumName;
+
 
 - (void)showCameraWithParentController:(UIViewController*)parentController;
 
@@ -24,10 +24,8 @@
 
 @protocol SCNavigationControllerDelegate <NSObject>
 @optional
-- (BOOL)willDismissNavigationController:(SCNavigationController *)navigatonController;
+- (BOOL)willDismissNavigationController:(SCNavigationController*)navigatonController;
 
-- (void)didTakePicture:(SCNavigationController *)navigationController image:(UIImage*)image;
-
-- (void)showAlbum:(SCNavigationController *)navigationController;
+- (void)didTakePicture:(SCNavigationController*)navigationController image:(UIImage*)image;
 
 @end

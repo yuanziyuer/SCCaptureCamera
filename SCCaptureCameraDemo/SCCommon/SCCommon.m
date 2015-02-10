@@ -9,7 +9,13 @@
 #import "SCCommon.h"
 #import "SCDefines.h"
 #import <QuartzCore/QuartzCore.h>
-#import "ALAssetsLibrary+CustomPhotoAlbum.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+@interface SCCommon ()
+
+
+@property (nonatomic,strong) ALAssetsLibrary * alassetsLibray;
+@end
+
 
 @implementation SCCommon
 
@@ -45,32 +51,13 @@
 #pragma mark -------------save image to local---------------
 //保存照片至本机
 + (void)saveImageToPhotoAlbum:(UIImage*)image {
-    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+//    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+    
+    
+    
+
 }
 
-+ (void)saveImageToCustomAlbum:(UIImage *)image
-                 withAlbumName:(NSString *)albumName {
-  ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-  [library saveImage:image
-             toAlbum:albumName
-          completion:^(NSURL *assetURL, NSError *error) {
-            NSLog(@"save image success = %@", assetURL);
-          } failure:^(NSError *error) {
-            NSLog(@"save image failed = %@", error);
-          }];
-}
-
-+ (void)saveVideoToCustomAlbum:(NSURL *)videoUrl
-                 withAlbumName:(NSString *)albumName {
-  ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-  [library saveVideo:videoUrl
-             toAlbum:albumName
-          completion:^(NSURL *assetURL, NSError *error) {
-            NSLog(@"save video success = %@", assetURL);
-          } failure:^(NSError *error) {
-            NSLog(@"save video failed = %@", error);
-          }];
-}
 
 + (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
     if (error != NULL) {
@@ -80,5 +67,6 @@
         SCDLog(@"保存成功");
     }
 }
+
 
 @end
